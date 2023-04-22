@@ -1,13 +1,23 @@
 <MainScreen>
     MDBoxLayout:
         orientation: 'vertical'
+        spacing: dp(10)
+        padding: dp(20)
         MDTopAppBar:
             left_action_items: [['menu', lambda x: app.callback(x), 'Menu']]
             title: 'App Name'
             md_bg_color: '#011f33'
             right_action_items: [['home', lambda x: app.callback(x), 'Home']]
-        MDLabel:
-            text: 'Test'
-            halign: 'center'
+        MDFloatLayout:
+            MDFloatingActionButton:
+                icon: 'magnify'
+                type: 'large'
+                spacing: "56dp"
+                adaptive_size: True
+                theme_icon_color: 'Custom'
+                md_bg_color: '#011f33'
+                pos_hint: {"center_x": .3, "center_y": .7}
+            
+            
 
 MainScreen:

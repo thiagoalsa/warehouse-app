@@ -2,6 +2,7 @@ import pandas as pd
 from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.uix.screenmanager import Screen
+from kivymd.uix.button import MDFloatingActionButton
 
 
 # Create a Pandas DataFrame
@@ -22,6 +23,7 @@ class MainScreen(Screen):
 
 class MainApp(MDApp):
     def build(self):
+        self.theme_cls.material_style = "M3"
         return Builder.load_file('warehouse_app/app/screen.kv')
     
     def callback(self, instance_action_top_appbar_button):
