@@ -1,0 +1,13 @@
+<MainScreen>
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            left_action_items: [['menu', lambda x: app.callback(x), 'Menu']]
+            title: 'App Name'
+            md_bg_color: '#011f33'
+            right_action_items: [['home', lambda x: app.callback(x), 'Home']]
+        MDLabel:
+            text: 'Test'
+            halign: 'center'
+
+MainScreen:

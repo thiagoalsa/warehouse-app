@@ -1,11 +1,33 @@
 import pandas as pd
+from kivymd.app import MDApp
+from kivy.lang import Builder
+from kivy.uix.screenmanager import Screen
 
 
 # Create a Pandas DataFrame
-images = pd.read_csv('/Users/thiagosantos/Desktop/dados warehouse/images.csv')
+images = pd.read_csv('warehouse_app/app/data/images.csv')
 
-style = pd.read_csv('/Users/thiagosantos/Desktop/dados warehouse/styles.csv', on_bad_lines='skip')
+style = pd.read_csv('warehouse_app/app/data/styles.csv', on_bad_lines='skip')
 
 # Add images link on style DataFrame
 
 style['link'] = images['link']
+
+# Create a Screen
+
+class MainScreen(Screen):
+    ...
+
+# Create class MainApp 
+
+class MainApp(MDApp):
+    def build(self):
+        return Builder.load_file('warehouse_app/app/screen.kv')
+    
+    def callback(self, instance_action_top_appbar_button):
+        print(instance_action_top_appbar_button)
+
+
+# Run the app
+
+MainApp().run()
