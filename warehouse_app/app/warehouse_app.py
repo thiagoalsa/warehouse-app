@@ -5,6 +5,7 @@ from kivy.uix.screenmanager import Screen
 from kivymd.uix.button import MDFloatingActionButton
 from kivymd.uix.dialog import MDDialog
 from kivy.uix.boxlayout import BoxLayout
+from kivymd.uix.button import MDFlatButton, MDRaisedButton
 
 
 # Create a Pandas DataFrame
@@ -21,7 +22,7 @@ style['link'] = images['link']
 class MainScreen(Screen):
     ...
 
-# Create a Dialog class
+# Create a class SearchBox is one Dialog for search products
 
 class SearchBox(BoxLayout):
     ...
@@ -40,7 +41,21 @@ class MainApp(MDApp):
     dialog_search = None
     def search(self):
         if not self.dialog_search:
-            self.dialog_search = MDDialog(type='custom', content_cls=SearchBox())
+            self.dialog_search = MDDialog(
+                title='Search',
+                type='custom',
+                content_cls=SearchBox(),
+                buttons=[
+                    MDFlatButton(
+                        text="CANCEL",
+                        theme_text_color="Custom",
+                        text_color=self.theme_cls.primary_color,
+                    ),
+                    MDRaisedButton(
+                        text="OK"
+                    ),
+                ],
+            )
         self.dialog_search.open()
 
 

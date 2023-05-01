@@ -19,6 +19,15 @@
                 pos_hint: {"center_x": .3, "center_y": .7}
                 on_release: app.search()
             
-            
+<SearchBox>
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "120dp"
+
+    MDTextField:
+        hint_text: "Product Code"
+        line_color_normal: 0,0,0
+        line_color_focus: 0,1,0
 
 MainScreen:
