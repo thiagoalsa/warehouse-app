@@ -17,6 +17,7 @@ style = pd.read_csv('warehouse_app/app/data/styles.csv', on_bad_lines='skip')
 
 style['link'] = images['link']
 
+print(style)
 # Create a Screen
 
 class MainScreen(Screen):
